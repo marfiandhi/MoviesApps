@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:background="#b7b7b7">
+
+    <ImageView
+            android:id="@+id/movie_poster"
+            android:layout_width="88dp"
+            android:layout_height="120dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_launcher_background"/>
+
+    <LinearLayout
+            android:id="@+id/movie_linear_layout"
+            android:layout_toEndOf="@id/movie_poster"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/movie_title"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Movie Title"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+        <TextView
+                android:id="@+id/movie_date"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="07 March 2019"
+                android:textSize="12sp"/>
+
+        <TextView
+                android:id="@+id/movie_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:textAlignment="center"
+                android:text="This is Movie Description, testing on max Length of text Size. Worth it tho. Then I have to write another text to make a long description."/>
+
+    </LinearLayout>
+
+    <RatingBar
+            android:id="@+id/movie_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/movie_linear_layout"
+            style="@style/Base.Widget.AppCompat.RatingBar.Small"
+            android:numStars="5"
+            android:rating="4.7"
+            android:stepSize="0.1"
+            android:isIndicator="true"
+            android:clickable="false"/>
+
+    <TextView
+            android:id="@+id/movie_rate_text"
+            android:layout_below="@id/movie_linear_layout"
+            android:layout_toStartOf="@id/movie_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.7"
+            android:textStyle="bold"
+            android:maxLength="4"
+            android:layout_marginEnd="8dp"/>
+
+</RelativeLayout>
