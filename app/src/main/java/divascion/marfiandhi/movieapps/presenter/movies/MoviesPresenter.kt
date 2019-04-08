@@ -1,11 +1,11 @@
 package divascion.marfiandhi.movieapps.presenter.movies
 
 import com.google.gson.Gson
-import divascion.marfiandhi.movieapps.CoroutineContextProvider
 import divascion.marfiandhi.movieapps.MovieListView
 import divascion.marfiandhi.movieapps.model.ApiRepository
 import divascion.marfiandhi.movieapps.model.MovieDBApi
 import divascion.marfiandhi.movieapps.model.movies.ListOfMoviesResponse
+import divascion.marfiandhi.movieapps.utils.CoroutineContextProvider
 import kotlinx.coroutines.experimental.async
 import org.jetbrains.anko.coroutines.experimental.bg
 

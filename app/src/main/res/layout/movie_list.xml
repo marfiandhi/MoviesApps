@@ -60,6 +60,8 @@
             style="@style/Base.Widget.AppCompat.RatingBar.Small"
             android:numStars="5"
             android:rating="4.7"
+            android:progressTint="@color/colorUltraMaroon"
+            android:secondaryProgressTint="@color/colorMaroon"
             android:stepSize="0.1"
             android:isIndicator="true"
             android:clickable="false"/>
@@ -71,6 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4.7"
+            android:progressTint="@color/colorUltraMaroon"
             android:textStyle="bold"
             android:maxLength="4"
             android:layout_marginEnd="8dp"/>

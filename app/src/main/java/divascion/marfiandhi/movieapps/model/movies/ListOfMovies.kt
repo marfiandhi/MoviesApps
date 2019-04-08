@@ -28,6 +28,9 @@ data class ListOfMovies (
     @SerializedName("overview")
     val overview: String? = null,
 
+    @SerializedName("popularity")
+    val popularity: Float? = null,
+
     @SerializedName("release_date")
     val releaseDate: String? = null
 

@@ -1,4 +1,4 @@
-package divascion.marfiandhi.movieapps
+package divascion.marfiandhi.movieapps.utils
 
 import kotlin.coroutines.experimental.CoroutineContext
 import kotlinx.coroutines.experimental.android.UI

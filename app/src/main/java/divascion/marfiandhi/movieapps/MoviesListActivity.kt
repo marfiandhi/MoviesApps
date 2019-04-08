@@ -9,8 +9,8 @@ import divascion.marfiandhi.movieapps.model.ApiRepository
 import divascion.marfiandhi.movieapps.model.movies.ListOfMovies
 import divascion.marfiandhi.movieapps.presenter.movies.MoviesPresenter
 import kotlinx.android.synthetic.main.activity_movies_list.*
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.support.v4.onRefresh
-import org.jetbrains.anko.toast
 
 @Suppress("DEPRECATION")
 class MoviesListActivity : AppCompatActivity(), MovieListView {
@@ -50,7 +50,7 @@ class MoviesListActivity : AppCompatActivity(), MovieListView {
         recycler_current.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
 
         adapter = MoviesAdapter(this, movies) {
-            toast(it.title.toString())
+            startActivity<DetailsMovie>("item" to it)
         }
 
         recycler_current.adapter = adapter
