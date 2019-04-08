@@ -32,7 +32,6 @@ class MoviesListActivity : AppCompatActivity(), MovieListView {
     }
 
     override fun showMovies(data: List<ListOfMovies>) {
-        current_movie_swipe.isRefreshing = false
         movies.clear()
         movies.addAll(data)
         adapter.notifyDataSetChanged()

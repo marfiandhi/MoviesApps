@@ -12,7 +12,9 @@ import divascion.marfiandhi.movieapps.model.credits.CrewOfMovies
 import divascion.marfiandhi.movieapps.model.movies.ListOfMovies
 import divascion.marfiandhi.movieapps.presenter.credits.CreditsPresenter
 import kotlinx.android.synthetic.main.fragment_movie_overview.*
+import org.jetbrains.anko.support.v4.onRefresh
 import org.jetbrains.anko.support.v4.swipeRefreshLayout
+import org.jetbrains.anko.support.v4.toast
 
 class FragmentMovieOverview : Fragment(), MovieOverviewView {
 
@@ -46,7 +48,8 @@ class FragmentMovieOverview : Fragment(), MovieOverviewView {
         val gson = Gson()
         presenter = CreditsPresenter(this, request, gson)
         presenter.getCreditsMovie(movies.id.toString())
-        swipe_overview_detail.swipeRefreshLayout {
+
+        swipe_overview_detail.onRefresh {
             presenter.getCreditsMovie(movies.id.toString())
         }
 
