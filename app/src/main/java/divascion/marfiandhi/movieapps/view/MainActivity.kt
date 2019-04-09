@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity
 import divascion.marfiandhi.movieapps.R
 import divascion.marfiandhi.movieapps.R.id.navigation_now_playing
 import divascion.marfiandhi.movieapps.R.id.navigation_upcoming
-import divascion.marfiandhi.movieapps.UpComingFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

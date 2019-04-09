@@ -1,4 +1,4 @@
-package divascion.marfiandhi.movieapps
+package divascion.marfiandhi.movieapps.view
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -7,12 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.gson.Gson
+import divascion.marfiandhi.movieapps.R
 import divascion.marfiandhi.movieapps.adapter.movies.MoviesAdapter
 import divascion.marfiandhi.movieapps.model.ApiRepository
 import divascion.marfiandhi.movieapps.model.movies.ListOfMovies
 import divascion.marfiandhi.movieapps.presenter.movies.MoviesPresenter
-import divascion.marfiandhi.movieapps.view.DetailsMovie
-import divascion.marfiandhi.movieapps.view.MovieListView
 import kotlinx.android.synthetic.main.fragment_up_coming.*
 import org.jetbrains.anko.support.v4.onRefresh
 import org.jetbrains.anko.support.v4.startActivity
