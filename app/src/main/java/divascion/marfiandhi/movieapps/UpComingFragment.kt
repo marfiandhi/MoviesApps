@@ -1,4 +1,4 @@
-package divascion.marfiandhi.movieapps.view
+package divascion.marfiandhi.movieapps
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -7,17 +7,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.gson.Gson
-import divascion.marfiandhi.movieapps.R
 import divascion.marfiandhi.movieapps.adapter.movies.MoviesAdapter
 import divascion.marfiandhi.movieapps.model.ApiRepository
 import divascion.marfiandhi.movieapps.model.movies.ListOfMovies
 import divascion.marfiandhi.movieapps.presenter.movies.MoviesPresenter
-import kotlinx.android.synthetic.main.fragment_now_playing.*
+import divascion.marfiandhi.movieapps.view.DetailsMovie
+import divascion.marfiandhi.movieapps.view.MovieListView
+import kotlinx.android.synthetic.main.fragment_up_coming.*
 import org.jetbrains.anko.support.v4.onRefresh
 import org.jetbrains.anko.support.v4.startActivity
 
 @Suppress("DEPRECATION")
-class NowPlayingFragment : Fragment(), MovieListView {
+class UpComingFragment : Fragment(), MovieListView {
 
     private var movies: MutableList<ListOfMovies> = mutableListOf()
 
@@ -25,50 +26,50 @@ class NowPlayingFragment : Fragment(), MovieListView {
     private lateinit var adapter: MoviesAdapter
 
     private lateinit var page: String
-    private val query = "now_playing"
+    private val query = "upcoming"
 
-    override fun showLoading() {
-        current_movie_swipe.isRefreshing = true
-    }
-
-    override fun hideLoading() {
-        current_movie_swipe.isRefreshing = false
-    }
-
-    override fun showMovies(data: List<ListOfMovies>) {
-        movies.clear()
-        movies.addAll(data)
-        adapter.notifyDataSetChanged()
-    }
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_now_playing, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_up_coming, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         page = "1"
-        current_movie_swipe.setColorSchemeColors(resources.getColor(R.color.colorMaroon),
+        upcoming_movie_swipe.setColorSchemeColors(resources.getColor(R.color.colorMaroon),
             resources.getColor(android.R.color.holo_red_light),
             resources.getColor(android.R.color.holo_orange_light),
             resources.getColor(android.R.color.holo_blue_light))
 
-        recycler_current.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL,false)
+        recycler_upcoming.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL,false)
 
         adapter = MoviesAdapter(activity!!, movies) {
             startActivity<DetailsMovie>("item" to it)
         }
 
-        recycler_current.adapter = adapter
+        recycler_upcoming.adapter = adapter
 
         val request = ApiRepository()
         val gson = Gson()
         presenter = MoviesPresenter(this, request, gson)
         presenter.getMovieList(page, query)
 
-        current_movie_swipe.onRefresh {
+        upcoming_movie_swipe.onRefresh {
             presenter.getMovieList(page, query)
         }
+    }
+
+    override fun showLoading() {
+        upcoming_movie_swipe.isRefreshing = true
+    }
+
+    override fun hideLoading() {
+        upcoming_movie_swipe.isRefreshing = false
+    }
+
+    override fun showMovies(data: List<ListOfMovies>) {
+        movies.clear()
+        movies.addAll(data)
+        adapter.notifyDataSetChanged()
     }
 
 }
