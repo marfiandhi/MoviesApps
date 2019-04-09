@@ -1,4 +1,4 @@
-package divascion.marfiandhi.movieapps
+package divascion.marfiandhi.movieapps.view
 
 import divascion.marfiandhi.movieapps.model.credits.CastOfMovies
 import divascion.marfiandhi.movieapps.model.credits.CrewOfMovies

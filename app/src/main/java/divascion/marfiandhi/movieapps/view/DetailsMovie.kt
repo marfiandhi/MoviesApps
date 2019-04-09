@@ -1,10 +1,12 @@
-package divascion.marfiandhi.movieapps
+package divascion.marfiandhi.movieapps.view
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import com.squareup.picasso.Picasso
+import divascion.marfiandhi.movieapps.BuildConfig
+import divascion.marfiandhi.movieapps.R
 import divascion.marfiandhi.movieapps.adapter.PagerAdapter
 import divascion.marfiandhi.movieapps.model.movies.ListOfMovies
 import kotlinx.android.synthetic.main.activity_details_movie.*
@@ -29,7 +31,10 @@ class DetailsMovie : AppCompatActivity() {
 
         tab_layout_movie_detail.setupWithViewPager(view_pager_movie_detail)
 
-        setupViewPager(view_pager_movie_detail, "Overview", "Trailers", FragmentMovieOverview(), FragmentMovieOverview())
+        setupViewPager(view_pager_movie_detail, "Overview", "Trailers",
+            MovieOverviewFragment(),
+            TrailerMovieFragment()
+        )
     }
 
     private fun setupViewPager(pager: ViewPager?, firstTitle: String, secondTitle: String, firstFragment: Fragment, secondFragment: Fragment) {

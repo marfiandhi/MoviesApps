@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/navigation_now_playing"
+            android:icon="@drawable/ic_movie_black_24dp"
+            android:title="Now Playing"/>
+    <item
+            android:id="@+id/navigation_upcoming"
+            android:icon="@drawable/ic_camera_roll_black_24dp"
+            android:title="Up Coming"/>
+</menu>

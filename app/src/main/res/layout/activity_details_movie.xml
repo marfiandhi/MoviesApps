@@ -7,7 +7,7 @@
         android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".DetailsMovie">
+        tools:context=".view.DetailsMovie">
 
     <android.support.design.widget.AppBarLayout
             android:id="@+id/app_bar_layout_movie_detail"
@@ -46,9 +46,19 @@
                         android:layout_marginTop="8dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
                         android:text="Movie"
-                        android:textSize="18sp"
+                        android:textSize="32sp"
                         android:textColor="#fff"
+                        android:layout_gravity="center"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#d1d1d1"
+                        android:textSize="16sp"
+                        android:text="Release Date"
                         android:layout_gravity="center"/>
 
                 <TextView

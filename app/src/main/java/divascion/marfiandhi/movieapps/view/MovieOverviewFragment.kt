@@ -1,4 +1,4 @@
-package divascion.marfiandhi.movieapps
+package divascion.marfiandhi.movieapps.view
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.gson.Gson
+import com.squareup.picasso.Picasso
+import divascion.marfiandhi.movieapps.BuildConfig
+import divascion.marfiandhi.movieapps.R
 import divascion.marfiandhi.movieapps.model.ApiRepository
 import divascion.marfiandhi.movieapps.model.credits.CastOfMovies
 import divascion.marfiandhi.movieapps.model.credits.CrewOfMovies
@@ -13,10 +16,9 @@ import divascion.marfiandhi.movieapps.model.movies.ListOfMovies
 import divascion.marfiandhi.movieapps.presenter.credits.CreditsPresenter
 import kotlinx.android.synthetic.main.fragment_movie_overview.*
 import org.jetbrains.anko.support.v4.onRefresh
-import org.jetbrains.anko.support.v4.swipeRefreshLayout
-import org.jetbrains.anko.support.v4.toast
 
-class FragmentMovieOverview : Fragment(), MovieOverviewView {
+@Suppress("DEPRECATION")
+class MovieOverviewFragment : Fragment(), MovieOverviewView {
 
     private var crew: MutableList<CrewOfMovies> = mutableListOf()
     private var cast: MutableList<CastOfMovies> = mutableListOf()
@@ -48,6 +50,11 @@ class FragmentMovieOverview : Fragment(), MovieOverviewView {
         val gson = Gson()
         presenter = CreditsPresenter(this, request, gson)
         presenter.getCreditsMovie(movies.id.toString())
+
+        swipe_overview_detail.setColorSchemeColors(resources.getColor(R.color.colorMaroon),
+            resources.getColor(android.R.color.holo_red_light),
+            resources.getColor(android.R.color.holo_orange_light),
+            resources.getColor(android.R.color.holo_blue_light))
 
         swipe_overview_detail.onRefresh {
             presenter.getCreditsMovie(movies.id.toString())
@@ -94,6 +101,43 @@ class FragmentMovieOverview : Fragment(), MovieOverviewView {
         crew_two_name.text = crew[1].name
         crew_three.text = crew[2].job
         crew_three_name.text = crew[2].name
+
+        if(cast[0].linkProfile!=null) {
+            Picasso.get().load("${BuildConfig.MOVIE_PROFILE}${cast[0].linkProfile}").into(caster_profile_one)
+        } else {
+            Picasso.get().load(BuildConfig.PROFILE_DEFAULT).into(caster_profile_one)
+        }
+        if(cast[1].linkProfile!=null) {
+            Picasso.get().load("${BuildConfig.MOVIE_PROFILE}${cast[1].linkProfile}").into(caster_profile_two)
+        } else {
+            Picasso.get().load(BuildConfig.PROFILE_DEFAULT).into(caster_profile_two)
+        }
+        if(cast[2].linkProfile!=null) {
+            Picasso.get().load("${BuildConfig.MOVIE_PROFILE}${cast[2].linkProfile}").into(caster_profile_three)
+        } else {
+            Picasso.get().load(BuildConfig.PROFILE_DEFAULT).into(caster_profile_three)
+        }
+        if(cast[3].linkProfile!=null) {
+            Picasso.get().load("${BuildConfig.MOVIE_PROFILE}${cast[3].linkProfile}").into(caster_profile_four)
+        } else {
+            Picasso.get().load(BuildConfig.PROFILE_DEFAULT).into(caster_profile_four)
+        }
+
+        if(crew[0].linkProfile!=null) {
+            Picasso.get().load("${BuildConfig.MOVIE_PROFILE}${crew[0].linkProfile}").into(crew_profile_one)
+        } else {
+            Picasso.get().load(BuildConfig.PROFILE_DEFAULT).into(crew_profile_one)
+        }
+        if(crew[1].linkProfile!=null) {
+            Picasso.get().load("${BuildConfig.MOVIE_PROFILE}${crew[1].linkProfile}").into(crew_profile_two)
+        } else {
+            Picasso.get().load(BuildConfig.PROFILE_DEFAULT).into(crew_profile_two)
+        }
+        if(crew[2].linkProfile!=null) {
+            Picasso.get().load("${BuildConfig.MOVIE_PROFILE}${crew[2].linkProfile}").into(crew_profile_three)
+        } else {
+            Picasso.get().load(BuildConfig.PROFILE_DEFAULT).into(crew_profile_three)
+        }
     }
 
     private fun getGenre() {
@@ -168,7 +212,7 @@ class FragmentMovieOverview : Fragment(), MovieOverviewView {
                         53 -> ", Thriller."
                         10752 -> ", War."
                         37 -> ", Western."
-                        else -> "."
+                        else -> ""
                     }
                 }
             }

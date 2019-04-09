@@ -19,6 +19,9 @@ android {
         buildConfigField "String", "MOVIEDB_API_KEY", "\"a194ad1c83649f7e68046b3a3d785e2c\""
         buildConfigField "String", "MOVIE_POSTER", "\"https://image.tmdb.org/t/p/w185_and_h278_bestv2\""
         buildConfigField "String", "MOVIE_BACKPOSTER", "\"https://image.tmdb.org/t/p/w500_and_h282_face\""
+        buildConfigField "String", "MOVIE_PROFILE", "\"https://image.tmdb.org/t/p/w138_and_h175_face\""
+        buildConfigField "String", "YOUTUBE", "\"https://www.youtube.com/watch?v=\""
+        buildConfigField "String", "PROFILE_DEFAULT", "\"https://vignette.wikia.nocookie.net/cswikia/images/2/20/Profile-blank-male.png/revision/latest?cb=20150701175801\""
     }
     buildTypes {
         release {

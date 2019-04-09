@@ -1,7 +1,7 @@
 package divascion.marfiandhi.movieapps.presenter.credits
 
 import com.google.gson.Gson
-import divascion.marfiandhi.movieapps.MovieOverviewView
+import divascion.marfiandhi.movieapps.view.MovieOverviewView
 import divascion.marfiandhi.movieapps.model.ApiRepository
 import divascion.marfiandhi.movieapps.model.MovieDBApi
 import divascion.marfiandhi.movieapps.model.credits.CreditsOfMoviesResponse

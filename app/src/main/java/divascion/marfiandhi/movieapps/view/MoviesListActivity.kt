@@ -1,9 +1,10 @@
-package divascion.marfiandhi.movieapps
+package divascion.marfiandhi.movieapps.view
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import com.google.gson.Gson
+import divascion.marfiandhi.movieapps.R
 import divascion.marfiandhi.movieapps.adapter.movies.MoviesAdapter
 import divascion.marfiandhi.movieapps.model.ApiRepository
 import divascion.marfiandhi.movieapps.model.movies.ListOfMovies
@@ -41,10 +42,10 @@ class MoviesListActivity : AppCompatActivity(), MovieListView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movies_list)
         page = "1"
-        current_movie_swipe.setColorSchemeColors(resources.getColor(R.color.colorAccent),
+        current_movie_swipe.setColorSchemeColors(resources.getColor(R.color.colorMaroon),
             resources.getColor(android.R.color.holo_red_light),
-            resources.getColor(android.R.color.holo_green_light),
-            resources.getColor(android.R.color.holo_orange_light))
+            resources.getColor(android.R.color.holo_orange_light),
+            resources.getColor(android.R.color.holo_blue_light))
 
         recycler_current.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
 
