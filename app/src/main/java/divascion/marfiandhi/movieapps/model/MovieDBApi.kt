@@ -16,11 +16,12 @@ object MovieDBApi {
             .toString()
     }
 
-    fun getMovieDetail(id: String?): String {
+    fun getTrailersMovie(id: String?): String {
         return Uri.parse(BuildConfig.BASE_URL).buildUpon()
             .appendPath("3")
             .appendPath("movie")
             .appendPath(id)
+            .appendPath("videos")
             .appendQueryParameter("api_key", BuildConfig.MOVIEDB_API_KEY)
             .appendQueryParameter("language", "en-US")
             .build()

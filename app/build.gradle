@@ -20,8 +20,8 @@ android {
         buildConfigField "String", "MOVIE_POSTER", "\"https://image.tmdb.org/t/p/w185_and_h278_bestv2\""
         buildConfigField "String", "MOVIE_BACKPOSTER", "\"https://image.tmdb.org/t/p/w500_and_h282_face\""
         buildConfigField "String", "MOVIE_PROFILE", "\"https://image.tmdb.org/t/p/w138_and_h175_face\""
-        buildConfigField "String", "YOUTUBE", "\"https://www.youtube.com/watch?v=\""
         buildConfigField "String", "PROFILE_DEFAULT", "\"https://vignette.wikia.nocookie.net/cswikia/images/2/20/Profile-blank-male.png/revision/latest?cb=20150701175801\""
+        buildConfigField "String", "GOOGLE_API_KEY", "\"AIzaSyDmzQEsbQpwjihdi1bD-LErhttCfF5I3Qc\""
     }
     buildTypes {
         release {
@@ -42,30 +42,33 @@ kotlin {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support:exifinterface:28.0.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
-
     implementation "org.jetbrains.anko:anko:$anko_version"
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
     implementation "org.jetbrains.anko:anko-design:$anko_version"
     implementation "org.jetbrains.anko:anko-appcompat-v7-commons:$anko_version"
     implementation "org.jetbrains.anko:anko-design-coroutines:$anko_version"
     implementation "org.jetbrains.anko:anko-support-v4-commons:$anko_version"
-
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    implementation('com.google.api-client:google-api-client-android:1.25.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+    implementation('com.google.apis:google-api-services-youtube:v3-rev209-1.25.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
     implementation 'com.android.support:support-v4:28.0.0'
-    implementation "org.jetbrains.kotlin:kotlin-reflect:1.3.21"
-
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.3.21'
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.picasso:picasso:2.71828'
-
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation files('C:/Users/ASUS/AndroidStudioProjects/MovieApps/libs/YouTubeAndroidPlayerApi.jar')
 }
