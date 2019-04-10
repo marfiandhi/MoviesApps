@@ -37,7 +37,7 @@ class YoutubeFragment : Fragment(), YouTubePlayer.OnInitializedListener {
         val youtubePlayerFragment = YouTubePlayerSupportFragment()
         youtubePlayerFragment.initialize(BuildConfig.GOOGLE_API_KEY, this)
         val fragmentManager = fragmentManager
-        fragmentManager?.beginTransaction()?.replace(R.id.youtube_player, youtubePlayerFragment)?.commit()
+        fragmentManager?.beginTransaction()?.replace(R.id.root_youtube_player, youtubePlayerFragment)?.commit()
     }
 
 }
