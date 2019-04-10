@@ -3,9 +3,13 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:background="#000000"
+              android:background="@drawable/rounded_color"
+              android:backgroundTint="#000000"
               tools:context=".view.TrailerMovieFragment"
               android:layout_margin="8dp"
+              android:paddingLeft="8dp"
+              android:paddingTop="4dp"
+              android:paddingRight="8dp"
               android:orientation="vertical">
 
     <ImageView

@@ -181,7 +181,8 @@
                             android:paddingEnd="4dp"
                             android:paddingStart="4dp"
                             android:gravity="center"
-                            android:background="#000"
+                            android:background="@drawable/rounded_color"
+                            android:backgroundTint="#000000"
                             android:orientation="vertical">
 
                         <ImageView
@@ -218,7 +219,8 @@
                             android:paddingEnd="4dp"
                             android:paddingStart="4dp"
                             android:gravity="center"
-                            android:background="#000"
+                            android:background="@drawable/rounded_color"
+                            android:backgroundTint="#000000"
                             android:orientation="vertical">
 
                         <ImageView
@@ -255,7 +257,8 @@
                             android:paddingEnd="4dp"
                             android:paddingStart="4dp"
                             android:gravity="center"
-                            android:background="#000"
+                            android:background="@drawable/rounded_color"
+                            android:backgroundTint="#000000"
                             android:orientation="vertical">
 
                         <ImageView
@@ -292,7 +295,8 @@
                             android:paddingEnd="4dp"
                             android:paddingStart="4dp"
                             android:gravity="center"
-                            android:background="#000"
+                            android:background="@drawable/rounded_color"
+                            android:backgroundTint="#000000"
                             android:orientation="vertical">
 
                         <ImageView
@@ -369,7 +373,8 @@
                             android:paddingEnd="4dp"
                             android:paddingStart="4dp"
                             android:gravity="center"
-                            android:background="#000"
+                            android:background="@drawable/rounded_color"
+                            android:backgroundTint="#000000"
                             android:orientation="vertical">
 
                         <ImageView
@@ -406,7 +411,8 @@
                             android:paddingEnd="4dp"
                             android:paddingStart="4dp"
                             android:gravity="center"
-                            android:background="#000"
+                            android:background="@drawable/rounded_color"
+                            android:backgroundTint="#000000"
                             android:orientation="vertical">
 
                         <ImageView
@@ -443,7 +449,8 @@
                             android:paddingEnd="4dp"
                             android:paddingStart="4dp"
                             android:gravity="center"
-                            android:background="#000"
+                            android:background="@drawable/rounded_color"
+                            android:backgroundTint="#000000"
                             android:orientation="vertical">
 
                         <ImageView

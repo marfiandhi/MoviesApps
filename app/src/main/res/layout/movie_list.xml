@@ -5,7 +5,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:padding="8dp"
-        android:background="#b7b7b7">
+        android:background="@drawable/rounded_color"
+        android:backgroundTint="#b7b7b7">
 
     <ImageView
             android:id="@+id/movie_poster"
