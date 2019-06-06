@@ -49,7 +49,10 @@ class DetailsMovie : AppCompatActivity() {
 
     private fun loadContentFavoriteToolbar(data: ListOfMovies) {
         supportActionBar?.title = data.title
-        Picasso.get().load("${BuildConfig.MOVIE_BACKPOSTER}${data.linkBackdropPoster}").into(movie_image)
+        Picasso.get().load("${BuildConfig.MOVIE_BACKPOSTER}${data.linkBackdropPoster}")
+            .placeholder(R.color.colorMaroon)
+            .error(R.drawable.no_thumbnail)
+            .into(movie_image)
         detail_movie_name.text = data.title
         detail_movie_release.text = data.releaseDate
     }

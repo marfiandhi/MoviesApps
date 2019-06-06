@@ -23,7 +23,7 @@ class MoviesPresenter(private val view: MovieListView,
                     ListOfMoviesResponse::class.java
                 )
             }
-            view.showMovies(data.await().results)
+            view.showMovies(data.await().results, data.await().page, data.await().totalPage)
             view.hideLoading()
         }
     }

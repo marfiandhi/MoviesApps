@@ -6,14 +6,15 @@
         android:layout_margin="8dp"
         android:padding="8dp"
         android:background="@drawable/rounded_color"
-        android:backgroundTint="#b7b7b7">
+        android:backgroundTint="#C7C7C7">
 
     <ImageView
             android:id="@+id/movie_poster"
             android:layout_width="88dp"
             android:layout_height="120dp"
             android:layout_marginEnd="8dp"
-            android:src="@drawable/ic_launcher_background"/>
+            android:src="@drawable/ic_launcher_background"
+            android:layout_centerVertical="true"/>
 
     <LinearLayout
             android:id="@+id/movie_linear_layout"
@@ -29,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="Movie Title"
+                android:text="@string/movie_title"
                 android:textStyle="bold"
                 android:textSize="20sp"/>
 
@@ -38,7 +39,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="07 March 2019"
+                android:text="@string/date_example"
                 android:textSize="12sp"/>
 
         <TextView
@@ -48,7 +49,7 @@
                 android:maxLines="3"
                 android:ellipsize="end"
                 android:textAlignment="center"
-                android:text="This is Movie Description, testing on max Length of text Size. Worth it tho. Then I have to write another text to make a long description."/>
+                android:text="@string/testing_string_description"/>
 
     </LinearLayout>
 
@@ -73,7 +74,7 @@
             android:layout_toStartOf="@id/movie_rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4.7"
+            android:text="@string/rate_example_value"
             android:progressTint="@color/colorUltraMaroon"
             android:textStyle="bold"
             android:maxLength="4"

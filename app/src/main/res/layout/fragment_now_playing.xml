@@ -13,11 +13,24 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_current"
-                android:scrollbars="vertical"
+        <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_current"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/now_playing_page_recycler"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
 
     </android.support.v4.widget.SwipeRefreshLayout>
 

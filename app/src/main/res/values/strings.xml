@@ -3,4 +3,31 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_of_trailer">Title of Trailer</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="date_example">07 March 2019</string>
+    <string name="testing_string_description">This is Movie Description, testing on max Length of text Size. Worth it
+        tho. Then I have to write another text to make a long description.
+    </string>
+    <string name="rate_example_value">4.7</string>
+    <string name="popularity">Popularity</string>
+    <string name="popularity_example">100.993</string>
+    <string name="overview">Overview</string>
+    <string name="overview_example">bla bla bla bla</string>
+    <string name="genre">Genre</string>
+    <string name="cast">Cast</string>
+    <string name="cast_1">Cast 1</string>
+    <string name="example_name">Your Name</string>
+    <string name="cast_2">Cast 2</string>
+    <string name="cast_3">Cast 3</string>
+    <string name="cast_4">Cast 4</string>
+    <string name="crew">Crew</string>
+    <string name="crew_1">Crew 1</string>
+    <string name="crew_2">Crew 2</string>
+    <string name="crew_3">Crew 3</string>
+    <string name="movie">Movie</string>
+    <string name="release_date">Release Date</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="up_coming">Up Coming</string>
+    <string name="change_language">Change Language</string>
 </resources>

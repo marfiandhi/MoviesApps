@@ -25,12 +25,12 @@ class TrailersAdapter(private val context: Context, private val trailer: List<Tr
     class TrailerViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         fun bindItem(trailer: TrailersOfMovie, listener: (TrailersOfMovie) -> Unit) {
-
-            if(trailer.type == "Teaser" || trailer.type == "Trailer") {
-                itemView.trailer_title.text = trailer.name
-                val link = "http://img.youtube.com/vi/${trailer.query}/0.jpg"
-                Picasso.get().load(link).into(itemView.thumbnail_video)
-            }
+            itemView.trailer_title.text = trailer.name
+            val link = "http://img.youtube.com/vi/${trailer.query}/0.jpg"
+            Picasso.get().load(link)
+                .placeholder(android.R.color.black)
+                .error(R.drawable.no_thumbnail)
+                .into(itemView.thumbnail_video)
             itemView.setOnClickListener { listener(trailer) }
         }
     }

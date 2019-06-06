@@ -24,7 +24,8 @@ class UpComingFragment : Fragment(), MovieListView {
     private lateinit var presenter : MoviesPresenter
     private lateinit var adapter: MoviesAdapter
 
-    private lateinit var page: String
+    private var page = 0
+    private var totalPage = 0
     private val query = "upcoming"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -33,7 +34,7 @@ class UpComingFragment : Fragment(), MovieListView {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        page = "1"
+        page = 1
         upcoming_movie_swipe.setColorSchemeColors(resources.getColor(R.color.colorMaroon),
             resources.getColor(android.R.color.holo_red_light),
             resources.getColor(android.R.color.holo_orange_light),
@@ -45,15 +46,25 @@ class UpComingFragment : Fragment(), MovieListView {
             startActivity<DetailsMovie>("item" to it)
         }
 
+
+        adapter.setOnBottomReachedListener(object : OnBottomReachedListener {
+            override fun onBottomReached(position: Int) {
+                if(page!=totalPage) {
+                    page++
+                    presenter.getMovieList(page.toString(), query)
+                }
+            }
+        })
+
         recycler_upcoming.adapter = adapter
 
         val request = ApiRepository()
         val gson = Gson()
         presenter = MoviesPresenter(this, request, gson)
-        presenter.getMovieList(page, query)
+        presenter.getMovieList(page.toString(), query)
 
         upcoming_movie_swipe.onRefresh {
-            presenter.getMovieList(page, query)
+            hideLoading()
         }
     }
 
@@ -65,10 +76,11 @@ class UpComingFragment : Fragment(), MovieListView {
         upcoming_movie_swipe.isRefreshing = false
     }
 
-    override fun showMovies(data: List<ListOfMovies>) {
-        movies.clear()
+    override fun showMovies(data: List<ListOfMovies>, page: Int?, totalPage: Int?) {
         movies.addAll(data)
         adapter.notifyDataSetChanged()
+        this.page = page!!
+        this.totalPage = totalPage!!
     }
 
 }

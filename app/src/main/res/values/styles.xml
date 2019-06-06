@@ -18,4 +18,11 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="ShadowText">
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
 </resources>

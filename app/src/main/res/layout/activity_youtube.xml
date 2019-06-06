@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:layout_gravity="center"
+        android:background="#DA000000"
         tools:context=".view.YoutubeActivity">
 
     <FrameLayout
             android:id="@+id/youtube_frame"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-</LinearLayout>
+</RelativeLayout>
